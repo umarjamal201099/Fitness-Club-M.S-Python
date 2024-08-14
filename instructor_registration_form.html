@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Instructor Registration{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Instructor Registration</h2>
+    <form action="/register_instructor" method="POST">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+            <label for="qualification">Qualification:</label>
+            <textarea id="qualification" name="qualification" rows="4"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="timings">Timings:</label>
+            <input type="text" id="timings" name="timings">
+        </div>
+        <div class="form-group">
+            <button type="button" onclick="window.location.href='/instructors';">Check Instructors</button>
+            <button type="submit">Register</button>
+        </div><br><br>
+    </form>
+</div>
+
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='instructor_registration_form.css') }}">
+{% endblock %}
+
+

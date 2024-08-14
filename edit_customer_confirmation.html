@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Edit Customer - Fitness Club Management System{% endblock %}
+
+{% block content %}
+<h2>Customer Information Updated</h2>
+<p>The customer information has been successfully updated.</p>
+<p><a href="/customers">View Customers</a></p>
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='edit_customer_confirmation.css') }}">
+{% endblock %}
+
+
+

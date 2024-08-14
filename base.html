@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Fitness Club Management System{% endblock %}</title>
+    <!-- CSS stylesheets -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='base_style.css') }}">
+    {% block styles %}{% endblock %}
+    <style>
+        /* CSS for menu highlighting */
+        .active {
+            background-color: #4CAF50; /* Set the background color for active menu item */
+            padding: 10px; /* Add padding to create space around the text */
+            border-radius: 5px; /* Add border radius to create rounded corners */
+        }
+
+        nav ul li {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Fitness Club Management System</h1>
+        <nav>
+            <ul>
+                <li class="{% if active_page == 'dashboard' %}active{% endif %}"><a href="/dashboard">Dashboard</a></li>
+                <li class="{% if active_page == 'interview' %}active{% endif %}"><a href="/interview">Interview/BMI</a></li>
+                <li class="{% if active_page == 'customers' %}active{% endif %}"><a href="/customers">Customers</a></li>
+                <li class="{% if active_page == 'instructors' %}active{% endif %}"><a href="/instructors">Instructors</a></li>
+                <li class="{% if active_page == 'workout_management' %}active{% endif %}"><a href="/workout_management">Workout Management</a></li>
+                <li class="{% if active_page == 'accounts' %}active{% endif %}"><a href="/accounts">Accounts</a></li>
+                <li class="{% if active_page == 'reports' %}active{% endif %}"><a href="/reports">Reports</a></li>
+                <li class="{% if active_page == 'backup' %}active{% endif %}"><a href="/backup">Backup Database</a></li>
+                <li class="{% if active_page == 'logout' %}active{% endif %}"><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="content">
+            {% block content %}
+            {% endblock %}
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Fitness Club Management System</p>
+    </footer>
+</body>
+</html>

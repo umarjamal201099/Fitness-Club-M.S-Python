@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<div class="container center-align">
+    <div class="metrics-container">
+        <div class="metric">
+            <h2>Total Customers</h2>
+            <p>{{ total_customers }}</p>
+        </div>
+        <div class="metric">
+            <h2>Total Instructors</h2>
+            <p>{{ total_instructors }}</p>
+        </div>
+        <div class="metric">
+            <h2>Total Revenue</h2>
+            <p>${{ total_revenue }}</p>
+        </div>
+        <div class="metric">
+            <h2>Total Expenses</h2>
+            <p>${{ total_expenses }}</p>
+        </div>
+        <!-- Additional metrics -->
+        <div class="metric">
+            <h2>Total Workouts</h2>
+            <p>{{ total_workouts }}</p>
+        </div>
+        <!-- Add more metrics as needed -->
+    </div>
+</div>
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='dashboard_style.css') }}">
+<style>
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .metrics-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+    .metric {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 200px;
+    }
+</style>
+{% endblock %}
+
+{% set active_page = 'dashboard' %}

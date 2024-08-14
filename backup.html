@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Backup{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <h1>Backup Database</h1><br>
+    {% if backup_success %}
+        <div class="alert alert-success" role="alert">
+            {{ message }}
+        </div>
+        {% else %}
+        <div class="alert alert-danger" role="alert">
+            {{ message }}
+        </div>
+        {% endif %}
+    <form action="/backup" method="POST">
+        <p>Click the button below to create a backup of the database:</p><br>
+        <button type="submit">Backup Database</button>
+    </form>
+</div>
+
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='backup.css') }}">
+{% endblock %}
+{% set active_page = 'backup' %}

@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block title %}Workout Management{% endblock %}
+
+{% block content %}
+
+<div class="container center-align">
+    <h1>Workout Management</h1>
+
+    <!-- Flash Messages -->
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="flash-message {{ category }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <!-- Add workout form -->
+
+    <h2>Add Workout</h2>
+    <form action="/add_workout" method="POST">
+        <label for="workout_name">Workout Name:</label><br>
+        <input type="text" id="workout_name" name="workout_name"><br>
+        <label for="category">Category:</label><br>
+        <select id="category" name="category" class="center-align-dropdown">
+            {% for category in categories %}
+            <option value="{{ category[0] }}">{{ category[1] }}</option>
+            {% endfor %}
+        </select><br>
+        <input type="submit" value="Add Workout" class="input-button add-workout-button">
+    </form>
+
+
+    <h2>Manage Workouts</h2>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Workout Name</th>
+                    <th>Category</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in query_results %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>
+                        <div class="action-buttons">
+                            <a href="/edit_workout/{{ row[2] }}" class="edit-button">Edit</a>
+                            <form action="/delete_workout/{{ row[2] }}" method="post" onsubmit="return confirm('Are you sure you want to delete this workout?')">
+                                <button type="submit" class="delete-button">Delete</button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- Assign workout to customer -->
+    
+    <h2>Assign Workout to Customer</h2>
+    <div class="center-align"> <!-- Center-align the form -->
+    <form action="/assign_workout" method="POST">
+
+        <label for="customer_name">Select Customer Name:</label><br>
+        <select id="customer_name" name="customer_name">
+            {% for customer in customers %}
+            <option value="{{ customer[0] }}">{{ customer[1] }}</option>
+            {% endfor %}        
+        </select><br>
+       
+
+        <label for="workout_select">Select Workout:</label><br>
+        <select id="workout_select" name="workout_select">
+            {% for workout in workouts %}
+            <option value="{{ workout[0] }}">{{ workout[1] }}</option>
+            {% endfor %}        
+        </select><br>
+
+        <input type="submit" value="Assign Workout" class="input-button assign-workout-button"><br><br><br>
+         
+    </form>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block styles %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='workout_management.css') }}">
+<style>
+    .center-align {
+        text-align: center;
+    }
+</style>
+
+{% endblock %}
+
+{% set active_page = 'workout_management' %}

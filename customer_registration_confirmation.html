@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Customer Registration Confirmation - Fitness Club Management System{% endblock %}
+{% block content %}
+<div class="container center-align">
+    <h2>Customer Registration Successful</h2>
+    <p>Thank you for registering. Your details have been successfully added to the system.</p>
+    <a href="/customers">View All Customers Here</a>
+</div>
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='customer_registration_confirmation.css') }}">
+<style>
+    .center-align {
+        text-align: center;
+    }
+</style>
+{% endblock %}

@@ -1,0 +1,44 @@
+/* index_style.css */
+
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center; /* Center align text */
+    padding: 20px; /* Add padding for better spacing */
+}
+
+/* Header styles */
+h1 {
+    color: #333; /* Change header color */
+    margin-bottom: 20px; /* Increase margin bottom */
+}
+
+/* Anchor styles */
+a {
+    color: #333; /* Change anchor color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ffcc00; /* Change color on hover */
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

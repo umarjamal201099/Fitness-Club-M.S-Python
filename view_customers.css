@@ -1,0 +1,149 @@
+/* view_customers.css */
+
+/* Center align the content */
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center align the content */
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Button styles */
+.button-container {
+    text-align: center;
+}
+
+.button-container button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.button-container button:hover {
+    background-color: #555;
+}
+
+/* Form styles */
+form {
+    width: 60%;
+    margin: 0 auto;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input[type="number"],
+form input[type="text"],
+form textarea {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+/* Display information styles */
+ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+
+h3 {
+    margin-top: 20px;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+/* Button styles */
+button[type="button"] {
+    padding: 10px 20px;
+    background-color: #007bff; /* Default button color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="button"]:hover,
+button[type="button"]:active {
+    background-color: #0056b3; /* Darker shade on hover and click */
+}
+
+/* Center align the action buttons */
+.action-buttons {
+    display: flex;
+    justify-content: center; /* Center align the buttons horizontally */
+}
+
+/* Style for the action buttons */
+.action-buttons a, .action-buttons button {
+    padding: 8px 12px;
+    margin-right: 8px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+.action-buttons a {
+    background-color: #007bff;
+}
+
+.action-buttons button {
+    background-color: #333;
+}
+
+.action-buttons a:hover, .action-buttons button:hover {
+    background-color: darken(#007bff, 10%);
+}
+
+

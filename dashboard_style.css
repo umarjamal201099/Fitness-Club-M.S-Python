@@ -1,0 +1,33 @@
+/* Custom CSS for Dashboard */
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center align the content */
+}
+
+.metrics-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.metric {
+    margin: 20px;
+    text-align: center; /* Center-align text */
+    background-color: #fff; /* Added for better readability */
+    padding: 20px;
+    border-radius: 8px; /* Added for aesthetics */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Added for a subtle shadow effect */
+}
+
+.metric h2 {
+    color: #007bff;
+}
+
+.metric p {
+    font-size: 18px;
+}

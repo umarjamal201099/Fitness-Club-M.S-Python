@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Instructor Confirmation{% endblock %}
+
+{% block content %}
+<h2>Edit Instructor Confirmation</h2>
+    <p>The instructor information has been successfully updated.</p>
+    <p><a href="/instructors">View Instructors</a></p>
+    
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='edit_instructor_confirmation.css') }}">
+{% endblock %}
+
+
+  

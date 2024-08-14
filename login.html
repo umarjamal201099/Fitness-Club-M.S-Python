@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+    <style>
+        /* Center align the container */
+        .container {
+            width: 60%;
+            margin: auto;
+            text-align: center;
+            padding-top: 50px; /* Add padding to the top */
+        }
+
+        /* Center align the flashed messages */
+        .flash-messages {
+            text-align: center;
+            margin-bottom: 20px; /* Add margin to separate from other content */
+        }
+
+        /* Move the Login label up */
+        h2 {
+            margin-top: 0;
+        }
+
+        /* Add margin to the form-group */
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left; /* Align the form elements to the left */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Fitness Club Management System</h1>
+    </header>
+    
+    <!-- Flashed message display -->
+    <div class="flash-messages">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+    <!-- End of flashed message display -->
+
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+
+    <div class="container">
+        <h2>Login</h2> <!-- Moved the Login label up -->
+        <form action="/login" method="POST">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group show-password">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required><br><br>
+                <input type="checkbox" id="showPassword" onclick="togglePassword()"> Show Password
+            </div>
+            <div class="form-group">
+                <button type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Fitness Club Management System</p>
+    </footer>
+
+    <script>
+        function togglePassword() {
+            var passwordInput = document.getElementById("password");
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+            } else {
+                passwordInput.type = "password";
+            }
+        }
+    </script>
+</body>
+</html>

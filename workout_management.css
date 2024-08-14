@@ -1,0 +1,199 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Heading styles */
+ h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center; /* Center headings */
+}
+
+/* Flash message styles */
+.flash-message {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.success {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.error {
+    background-color:#333;;
+    color: white;
+}
+
+/* Form styles */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="#000" d="M6 8l4 4 4-4"></path></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 15px;
+}
+
+/* Button styles */
+.button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.input-button {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.input-button:hover {
+    background-color: #0056b3;
+}
+
+/* Table styles */
+.table-container {
+    max-width: 800px;
+    margin: 0 auto;
+    overflow-x: auto; /* Enable horizontal scrolling for small screens */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/* Action buttons */
+.action-buttons {
+    display: flex;
+}
+
+.edit-button, .delete-button {
+    padding: 8px 12px;
+    margin-right: 8px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+.edit-button {
+    background-color: #007bff;
+}
+
+.delete-button {
+    background-color:#333;;
+}
+
+.edit-button:hover, .delete-button:hover {
+    background-color: darken(#007bff, 10%);
+}
+
+/* Center table header text */
+th {
+    text-align: center;
+}
+
+/* Button styles */
+.input-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.input-button:hover {
+    background-color: #0056b3;
+}
+
+/* Additional styles for specific buttons */
+.add-workout-button {
+    margin-top: 20px; /* Add margin to separate the buttons */
+}
+
+.assign-workout-button {
+    margin-top: 20px; /* Add margin to separate the buttons */
+}
+
+/* workout_management.css */
+
+/* Center align the content */
+.edit-workout-container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center align the content */
+}
+
+.edit-workout-form {
+    width: 60%; /* Adjust the width of the form */
+    margin: 0 auto; /* Center the form horizontally */
+    text-align: left; /* Align the form elements to the left */
+}
+
+.flash-message {
+    margin: 0 auto; /* Center the flash message */
+    width: 60%; /* Adjust the width of the flash message */
+}
+
+.center-align-dropdown {
+    text-align: center;
+}

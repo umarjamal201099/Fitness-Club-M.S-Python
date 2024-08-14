@@ -1,0 +1,176 @@
+{% extends "base.html" %}
+{% block title %}Accounts Management{% endblock %}
+{% block content %}
+<div class="container center-align">
+    <h1>Accounts Management</h1>
+    
+     <!-- Flash Messages -->
+     {% with messages = get_flashed_messages(with_categories=true) %}
+     {% if messages %}
+         {% for category, message in messages %}
+             <div class="flash-message {{ category }}">
+                 {{ message }}
+             </div>
+         {% endfor %}
+     {% endif %}
+     {% endwith %}
+
+    <!-- Form to add a new payment -->
+    <div class="form-container">
+        <h2>Add Payment</h2>
+    <form action="/add_payment" method="POST">
+        <label for="customer_id">Customer ID:</label>
+        <input type="text" id="customer_id" name="customer_id">
+        <label for="amount">Amount:</label>
+        <input type="text" id="amount" name="amount">
+        <label for="payment_date">Payment Date:</label>
+        <input type="date" id="payment_date" name="payment_date">
+        <button type="submit">Add Payment</button>
+    </form>
+    </div>
+
+    <!-- Display payments -->
+    <h2>Payments</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Payment ID</th>
+                <th>Customer ID</th>
+                <th>Amount</th>
+                <th>Payment Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for payment in payments %}
+            <tr>
+                <td>{{ payment[0] }}</td>
+                <td>{{ payment[1] }}</td>
+                <td>{{ payment[2] }}</td>
+                <td>{{ payment[3] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Form to add a new salary -->
+    <div class="form-container">
+        <h2>Add Salary</h2>
+    <form action="/add_salary" method="POST">
+        <label for="employee_id">Employee ID:</label>
+        <input type="text" id="employee_id" name="employee_id">
+        <label for="salary_amount">Salary Amount:</label>
+        <input type="text" id="salary_amount" name="salary_amount">
+        <label for="salary_date">Salary Date:</label>
+        <input type="date" id="salary_date" name="salary_date">
+        <button type="submit">Add Salary</button>
+    </form>
+    </div>
+
+    <!-- Display salaries -->
+    <h2>Salaries</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Salary ID</th>
+                <th>Employee ID</th>
+                <th>Amount</th>
+                <th>Salary Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for salary in salaries %}
+            <tr>
+                <td>{{ salary[0] }}</td>
+                <td>{{ salary[1] }}</td>
+                <td>{{ salary[2] }}</td>
+                <td>{{ salary[3] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+ 
+
+    <!-- Form to add a new rental -->
+    <div class="form-container">
+        <h2>Add Rental</h2>
+        <form action="/add_rental" method="POST">
+            <label for="Name">Name:</label>
+            <input type="text" id="Name" name="Name">
+            <label for="rental_amount">Rental Amount:</label>
+            <input type="text" id="rental_amount" name="rental_amount">
+            <label for="rental_date">Rental Date:</label>
+            <input type="date" id="rental_date" name="rental_date">
+            <button type="submit">Add Rental</button>
+        </form>
+    </div>
+
+    <!-- Display rentals -->
+    <h2>Rentals</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Rental ID</th>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Rental Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for rental in rentals %}
+            <tr>
+                <td>{{ rental[0] }}</td>
+                <td>{{ rental[1] }}</td>
+                <td>{{ rental[2] }}</td>
+                <td>{{ rental[3] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Form to add a new due fee -->
+    <div class="form-container">
+        <h2>Add Due Fee</h2>
+        <form action="/add_due_fee" method="POST">
+            <label for="customer_id">Customer ID:</label>
+            <input type="text" id="customer_id" name="customer_id" required>
+            <label for="amount">Amount:</label>
+            <input type="text" id="amount" name="amount" required>
+            <label for="due_date">Due Date:</label>
+            <input type="date" id="due_date" name="due_date" required>
+            <button type="submit">Add Due Fee</button>
+        </form>
+    </div>
+
+    <!-- Display due fees -->
+    <h2>Due Fees</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Customer ID</th>
+            <th>Amount</th>
+            <th>Due Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for due_fee in due_fees %}
+        <tr>
+            <td>{{ due_fee[1] }}</td>
+            <td>{{ due_fee[2] }}</td>
+            <td>{{ due_fee[3] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table><br><br><br>
+
+</div>
+{% endblock %}
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='accounts.css') }}">
+<style>
+    .center-align {
+        text-align: center;
+    }
+</style>
+{% endblock %}
+{% set active_page = 'accounts' %}

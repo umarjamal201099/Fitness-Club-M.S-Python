@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='workout_details.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Workout {{ workout[0] }} Detail</h2>
+        <div class="workout-info">
+            <p>Workout Name: {{ workout[1] }}</p>
+            <p>Description: {{ workout[2] }}</p>
+            <!-- Add more workout details here if needed -->
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Fitness Club Management System</p>
+    </footer>
+</body>
+</html>

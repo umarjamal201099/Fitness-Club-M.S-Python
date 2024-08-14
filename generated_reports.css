@@ -1,0 +1,33 @@
+/* generated_reports.css */
+
+table {
+    width: 80%; /* Adjust table width as needed */
+    border-collapse: collapse;
+    margin: 20px auto; /* Center-align table horizontally */
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2; /* Light gray background for table headers */
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}

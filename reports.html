@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block title %}Reports{% endblock %}
+
+{% block content %}
+<div class="container center-align">
+    <h1>Generate Reports</h1><br>
+    <form action="/generate_report" method="post">
+        <label for="report_type">Select Report Type:</label>
+        <select name="report_type" id="report_type">
+            <option value="Weight">Weight</option>
+            <option value="Fee">Fee</option>
+            <option value="Due Fees">Due Fees</option>
+            <option value="Salary">Salary</option>
+            <option value="Expense">Expense</option>
+            <option value="Profit">Profit</option>
+        </select>
+        <br><br>
+
+        <!-- Add radio buttons for report period -->
+        <label for="report_period">Select Report Period:</label>
+        <input type="radio" id="daily" name="report_period" value="daily" checked>
+        <label for="daily">Daily</label>
+        <input type="radio" id="weekly" name="report_period" value="weekly">
+        <label for="weekly">Weekly</label>
+        <input type="radio" id="monthly" name="report_period" value="monthly">
+        <label for="monthly">Monthly</label>
+        <br><br>
+
+        <button type="submit">Generate Report</button>
+    </form>
+
+    {% if selected_report_type %}
+    <h2>Selected Report Type: {{ selected_report_type }}</h2>
+    {% endif %}
+    <br><br>
+
+    <h3>Reports</h3><br>
+    <table border="1" class="center-align">
+        <thead>
+            <tr>
+                <th>Report ID</th>
+                <th>Report Type</th>
+                <th>Data</th>
+                <th>Report Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for report in allreports %}
+            <tr>
+                <td>{{ report['report_id'] }}</td>
+                <td>{{ report['report_type'] }}</td>
+                <td>{{ report['data'] }}</td>
+                <td>{{ report['report_date'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table><br><br>
+</div>
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='reports.css') }}">
+<style>
+    .center-align {
+        text-align: center;
+    }
+    table.center-align th,
+    table.center-align td {
+        text-align: center;
+    }
+</style>
+{% endblock %}
+
+{% set active_page = 'reports' %}

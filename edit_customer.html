@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Edit Customer - Fitness Club Management System{% endblock %}
+{% block content %}
+<div class="container center-align">
+    <h2>Edit Customer</h2>
+    <form action="/edit_customer/{{ customer[0] }}" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{ customer[1] }}" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="{{ customer[2] }}"><br><br>
+
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone" value="{{ customer[3] }}"><br><br>
+
+        <label for="height">Height (in meters):</label>
+        <input type="number" id="height" name="height" step="0.01" value="{{ customer[4] }}"><br><br>
+
+        <label for="weight">Weight (in kilograms):</label>
+        <input type="number" id="weight" name="weight" step="0.01" value="{{ customer[5] }}"><br><br>
+
+        <label for="waist">Waist (in centimeters):</label>
+        <input type="number" id="waist" name="waist" step="0.01" value="{{ customer[6] }}"><br><br>
+       
+        <label for="workout">Workout:</label>
+        <select id="workout" name="workout">
+            <option value="chest" {% if customer[7] == 'chest' %} selected {% endif %}>Chest Workout</option>
+            <option value="leg" {% if customer[7] == 'leg' %} selected {% endif %}>Leg Workout</option>
+            <option value="arm" {% if customer[7] == 'arm' %} selected {% endif %}>Arm Workout</option>
+        </select><br><br>
+
+        <label for="goal">Goal:</label>
+        <input type="text" id="goal" name="goal" value="{{ customer[8] }}"><br><br>
+
+        <button type="submit">Update</button>
+    </form>
+</div>
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='edit_customer.css') }}">
+<style>
+    .center-align {
+        text-align: center;
+    }
+</style>
+{% endblock %}

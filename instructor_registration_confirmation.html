@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Instructor Registration Confirmation{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Instructor Registration Successful</h2>
+    <p>Thank you for registering the instructor. The details have been successfully added to the system.</p>
+    <a href="/instructors">View All Instructors Here</a>
+</div>
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='instructor_registration_confirmation.css') }}">
+{% endblock %}
+
+
+  
